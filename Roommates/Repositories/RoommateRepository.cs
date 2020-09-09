@@ -122,6 +122,7 @@ namespace Roommates.Repositories
                             RentPortion = reader.GetInt32(reader.GetOrdinal("RentPortion")),
                             MovedInDate =  reader.GetDateTime(reader.GetOrdinal("MoveInDate")),
                             Room = null,
+                            RoomId = reader.GetInt32(reader.GetOrdinal("RoomId")),
                         };
                     }
 
@@ -261,7 +262,7 @@ namespace Roommates.Repositories
                     cmd.Parameters.AddWithValue("@rentPortion", roommate.RentPortion);
                     cmd.Parameters.AddWithValue("@moveInDate", roommate.MovedInDate);
                     cmd.Parameters.AddWithValue("@roomId", roommate.RoomId);
-                    cmd.Parameters.AddWithValue("@Id", roommate.Id);
+                    cmd.Parameters.AddWithValue("@id", roommate.Id);
 
 
                     cmd.ExecuteNonQuery();
